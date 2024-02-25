@@ -9,22 +9,19 @@
                    :artifact-id "ezy-query-core"
                    :version     EzyQueryVersion/VERSION})
 
-(def MVN-COOD (str "<dependency>
-  <groupId>io.github.kayr</groupId>
-  <artifactId>ezy-query-core</artifactId>
-  <version>" EzyQueryVersion/VERSION "</version>
-</dependency>"))
-
-(def ADD-DEPENDENCY-ERR (str "EzyQuery dependency not found in project."
-                             "Please add the following to your pom.xml \n"
-                             MVN-COOD))
 (defn dep-to-map [dep] {:group-id    (.getGroupId dep)
                         :artifact-id (.getArtifactId dep)
                         :version     (.getVersion dep)})
 
 (defn check-has-core-dev [deps]
   (if (not (some #{REQUIRED-DEP} deps))
-    (throw (RuntimeException. ^String ADD-DEPENDENCY-ERR))))
+    (throw (RuntimeException. (str "EzyQuery dependency not found in project."
+                                   "Please add the following to your pom.xml \n"
+                                   "<dependency>\n"
+                                   "  <groupId>io.github.kayr</groupId>\n"
+                                   "  <artifactId>ezy-query-core</artifactId>\n"
+                                   "  <version>" EzyQueryVersion/VERSION "</version>\n"
+                                   "</dependency>")))))
 
 (defn validate-deps [mvn]
   (->> mvn (.getDependencies) (map dep-to-map) (check-has-core-dev)))
@@ -79,15 +76,15 @@
 
     dirs))
 
-(defn transpile [in out]
+(defn transpile! [in out]
   (doto (BatchQueryGen/create (path in) (path out))
     (.generateAndWrite)))
 (defn mvn-gen! [mvn]
   (let [dirs     (set-up-dirs! mvn)
         src-main (:src-main-dir dirs)
         src-test (:src-test-dir dirs)]
-    (if (file-exists? src-main) (transpile src-main (:out-main-dir dirs)))
-    (if (file-exists? src-test) (transpile src-test (:out-test-dir dirs)))))
+    (if (file-exists? src-main) (transpile! src-main (:out-main-dir dirs)))
+    (if (file-exists? src-test) (transpile! src-test (:out-test-dir dirs)))))
 
 
 (defn mvn-init! [mvn] (set-up-dirs! mvn))
