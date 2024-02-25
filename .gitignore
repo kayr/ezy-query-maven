@@ -1,0 +1,29 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Leingingen generated files
+ezy-query-mvn-plugin/pom.xml
+!/resources/META-INF/maven/plugin.xml
+
+/ezy-query-mvn-plugin/.lein-repl-history
+/ezy-query-mvn-plugin/.nrepl-port
+/ezy-query-mvn-plugin/.prepl-port
+
+### IntelliJ IDEA ###
+.idea/
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store!/ezy-query-mvn-plugin/target/
