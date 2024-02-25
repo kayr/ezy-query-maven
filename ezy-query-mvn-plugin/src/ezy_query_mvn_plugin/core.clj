@@ -53,17 +53,16 @@
      :src-main-dir ezy-main-src
      :src-test-dir ezy-test-src}))
 
-(defn may-be-create-dir! [dirs]
-  (doseq [[k v] dirs]
-    (if (not (.exists (io/file v)))
-      (do
-        (println "Creating directory: [" k "] -> " v)
-        (.mkdirs (io/file v))))))
-
+(defn file-exists? [f] (.exists (io/file f)))
 
 (defn path [^String path] (Path/of path (into-array String [])))
 
-(defn file-exists? [f] (.exists (io/file f)))
+(defn may-be-create-dir! [dirs]
+  (doseq [[k v] dirs]
+    (if (not (file-exists? v))
+      (do
+        (println "Creating directory: [" k "] -> " v)
+        (.mkdirs (io/file v))))))
 
 (defn set-up-dirs! [mvn]
   (let [dirs (resolve-dirs mvn)]
