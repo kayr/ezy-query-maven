@@ -9,5 +9,5 @@ test: ci
 	cd ezy-query-mvn-itest && make test
 
 publish: test
-	cd ezy-query-mvn-plugin && make deploy
+	cd ezy-query-mvn-plugin && lein deploy
 
