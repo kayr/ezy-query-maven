@@ -7,3 +7,6 @@ ci:
 
 test: ci
 	cd ezy-query-mvn-itest && make test
+
+deploy: test
+	cd ezy-query-mvn-plugin && make deploy

@@ -27,3 +27,5 @@ ezy-query-mvn-plugin/pom.xml
 
 ### Mac OS ###
 .DS_Store!/ezy-query-mvn-plugin/target/
+.envrc
+/ezy-query-mvn-plugin/pom.xml.asc
