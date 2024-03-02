@@ -29,3 +29,4 @@ ezy-query-mvn-plugin/pom.xml
 .DS_Store!/ezy-query-mvn-plugin/target/
 .envrc
 /ezy-query-mvn-plugin/pom.xml.asc
+/ezy-query-mvn-plugin/resources/META-INF/maven/plugin.xml
