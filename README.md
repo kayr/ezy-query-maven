@@ -12,7 +12,7 @@ Add the following to your `pom.xml` (For now this is not yet available in maven 
     <plugin>
         <groupId>io.github.kayr</groupId>
         <artifactId>ezy-query-maven-plugin</artifactId>
-        <version>0.1.0-SNAPSHOT</version>
+        <version>0.0.1</version>
         <executions>
             <execution>
                 <goals>

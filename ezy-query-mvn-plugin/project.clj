@@ -1,4 +1,4 @@
-(defproject io.github.kayr/ezy-query-maven-plugin "0.0.1-SNAPSHOT"
+(defproject io.github.kayr/ezy-query-maven-plugin "0.0.1"
   :description "A maven plugin for generating ezy-query code"
   :url "https://github.com/kayr/ezy-query-maven"
   :license {:name "Apache License, Version 2.0"
