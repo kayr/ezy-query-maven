@@ -79,6 +79,7 @@
 (defn transpile! [in out]
   (doto (BatchQueryGen/create (path in) (path out))
     (.generateAndWrite)))
+
 (defn mvn-gen! [mvn]
   (let [dirs     (set-up-dirs! mvn)
         src-main (:src-main-dir dirs)
