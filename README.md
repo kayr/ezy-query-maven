@@ -1,5 +1,7 @@
 # The ezy-query Maven Plugin
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.kayr/ezy-query-maven-plugin/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/io.github.kayr/ezy-query-maven-plugin)
+
 Maven plugin for https://github.com/kayr/ezy-query
 
 ## Installation
