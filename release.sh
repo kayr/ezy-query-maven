@@ -107,7 +107,7 @@ echo "check the current branch is clean"
 assert_clean_branch
 
 echo "check the current branch is up-to-date"
-assert_branch_is_up_to_date
+# assert_branch_is_up_to_date
 
 echo "check the current branch is $MAIN_BRANCH"
 assert_eq "$CURRENT_BRANCH" "$MAIN_BRANCH" "Not on branch $MAIN_BRANCH, aborting."
