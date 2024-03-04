@@ -23,6 +23,4 @@ descriptor:
 	cp target/plugin-enhanced.xml resources/META-INF/maven/plugin.xml
 
 clean-install: clean javac pom descriptor install
-ci: clean-install
-di: descriptor install
 
