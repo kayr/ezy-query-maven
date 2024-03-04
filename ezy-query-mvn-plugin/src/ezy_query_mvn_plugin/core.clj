@@ -2,7 +2,7 @@
   (:require [clojure.java.io :as io])
   (:import (io.github.kayr.ezyquery EzyQueryVersion)
            (io.github.kayr.ezyquery.gen BatchQueryGen)
-           (java.nio.file Path)
+           (java.nio.file Paths)
            (org.apache.maven.model Build Resource)))
 
 (def REQUIRED-DEP {:group-id    "io.github.kayr"
@@ -52,7 +52,7 @@
 
 (defn file-exists? [f] (.exists (io/file f)))
 
-(defn path [^String path] (Path/of path (into-array String [])))
+(defn path [^String path] (Paths/get path (into-array String [])))
 
 (defn may-be-create-dir! [dirs]
   (doseq [[k v] dirs]
