@@ -9,7 +9,7 @@ import java.util.Vector;
 
 public class CodeUser {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalAccessException {
 
         Field<BigDecimal> f1 = ProdQuery1.PROD_QUERY1.F1;
         Field<String> f2 = ProdQuery1.PROD_QUERY1.F2;
@@ -26,7 +26,7 @@ public class CodeUser {
         try {
 
             Class.forName("test.TestQuery1");
-            throw new IllegalCallerException("Should not be able to load TestQuery1");
+            throw new IllegalAccessException("Should not be able to load TestQuery1");
         } catch (ClassNotFoundException ex) {
             System.out.println("TestQuery1 not found. Good!");
         }
