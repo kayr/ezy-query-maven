@@ -18,7 +18,7 @@
         <dependency>
             <groupId>io.github.kayr</groupId>
             <artifactId>ezy-query-core</artifactId>
-            <version>0.0.16</version>
+            <version>0.0.20</version>
         </dependency>
 
 <!--        Add annotation api javax-->
