@@ -101,7 +101,7 @@ MAIN_BRANCH="main"
 CURRENT_BRANCH=$(get_current_branch)
 CURR_VERSION=$(get_current_project_version)
 RELEASE_VERSION=$(remove_snapshot "$CURR_VERSION")
-NEXT_VERSION="$(increment_version "${RELEASE_VERSION}")-SNAPSHOT"
+
 
 echo "check the current branch is clean"
 assert_clean_branch
@@ -115,6 +115,10 @@ assert_eq "$CURRENT_BRANCH" "$MAIN_BRANCH" "Not on branch $MAIN_BRANCH, aborting
 echo "Current version is $CURR_VERSION. Release version will be $RELEASE_VERSION"
 NEW_VERSION=$(prompt_for_version "$RELEASE_VERSION")
 assert_not_empty "$NEW_VERSION" "Version cannot be empty"
+
+NEXT_VERSION=$(increment_version "$NEW_VERSION")
+NEXT_VERSION="${NEXT_VERSION}-SNAPSHOT"
+echo "Next version will be $NEXT_VERSION"
 
 echo "check tag [$NEW_VERSION] and branch  [release/$NEW_VERSION] does not exist"
 assert_tag_not_exists "$NEW_VERSION"

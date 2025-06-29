@@ -74,10 +74,10 @@ class CodeUserTest {
     void testProdDynamicQueryEzSql() {
 
         Dynamic Q = AllQueries.dynamic();
-        Field<Double> f1 = Q.F1;
+        Field<BigDecimal> f1 = Q.F1;
         Field<String> f2 = Q.F2;
         Field<Integer> f3 = Q.F3;
-        Field<Date> f4 = Q.F4;
+        Field<LocalDate> f4 = Q.F4;
 
         String sql = e.from(Q)
                 .select(f1, f2, f3)

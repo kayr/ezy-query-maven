@@ -7,7 +7,7 @@
 
   :dependencies [
                  [org.clojure/clojure "1.11.1"]
-                 [io.github.kayr/ezy-query-codegen "0.0.22"]
+                 [io.github.kayr/ezy-query-codegen "0.0.23"]
                  [org.apache.maven/maven-plugin-api "3.9.3" :scope "provided"]
                  [org.apache.maven/maven-project "2.2.1" :scope "provided"]
                  [org.apache.maven.plugin-tools/maven-plugin-annotations "3.11.0" :scope "provided"]]
